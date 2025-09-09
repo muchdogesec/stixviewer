@@ -151,6 +151,9 @@ function bundleToGraphElements(bundle, dataProps) {
     // create edges for all references in inline fields
     nodes.forEach((node) => makeEdgesForRefs(node).forEach(addEdgeFiltered));
 
+    // create edges for all extensions in object.extensions
+    nodes.forEach((node) => makeEdgesForExtensions(node).forEach(addEdgeFiltered));
+
     // creates nodes for all missing TLP marking-definitions
     edges
         .filter((e) => !(nodesMap[e.data.source] && nodesMap[e.data.target]))
@@ -347,15 +350,19 @@ function makeIdrefNodeElement(ref, originalRef) {
 }
 
 
-function makeEdgesForRefs (node) {
+function makeEdgesForRefs(node) {
     const entity = node.data.raw;
     const edges = [];
     if (!entity) {
         return edges;
     }
 
-    function makeEdgeForRef (val, field) {
-        const refs = typeof val === 'string' ? [val] : val;
+    function makeEdgeIfRef(val, field) {
+        // treat all fields ending with _ref(s) as a reference fields
+        if (!field.endsWith('_ref') && !field.endsWith('_refs')) {
+            return;
+        }
+        const refs = (typeof val === 'string') ? [val] : val;
         refs.forEach((ref) => {
             const edge = makeEdgeElement({
                 id: 'rel-' + entity.id + '-' + ref,
@@ -366,26 +373,39 @@ function makeEdgesForRefs (node) {
             edges.push(edge);
         });
     }
-    function findEdges (item, path) {
-        const field = path.join('_');
-        // treat all fields ending with _ref(s) as a reference fields
-        if (field.endsWith('_ref') || field.endsWith('_refs')) {
-            return makeEdgeForRef(item, field);
-        }
 
-        if (item instanceof Array) {
-            for (const obj of item) {
-                if (obj instanceof Object) {
-                    findEdges(obj, path);
-                }
-            }
-        } else if (item instanceof Object) {
-            for (const [k, v] of Object.entries(item)) {
-                findEdges(v, path.concat([k]));
-            }
-        }
+    _.forEach(entity, makeEdgeIfRef);
+
+    // check for embedded refs in extensions
+    if (entity.extensions
+        && entity.extensions['archive-ext']
+        && entity.extensions['archive-ext']['contains_refs']) {
+        makeEdgeIfRef(entity.extensions['archive-ext']['contains_refs'], 'contains_refs');
     }
-    findEdges(entity, []);
+
+    if (entity.granular_markings) {
+        entity.granular_markings.forEach((r) => makeEdgeIfRef(r['marking_ref'], 'marking_ref'));
+    }
+
+    return edges;
+}
+
+
+function makeEdgesForExtensions(node) {
+    const entity = node.data.raw;
+    const edges = [];
+    if (!entity?.extensions) {
+        return edges;
+    }
+    Object.keys(entity.extensions).forEach((def) => {
+        const edge = makeEdgeElement({
+            id: 'rel-' + entity.id + '-' + def,
+            source_ref: entity.id,
+            target_ref: def,
+            relationship_type: 'extension-definition',
+        });
+        edges.push(edge);
+    });
     return edges;
 }
 
