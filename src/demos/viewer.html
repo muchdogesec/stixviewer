@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph Viewer - Stixview</title>
+    <link rel="icon" href="https://github.com/traut/stixview/blob/master/.github/favicon.svg?raw=true"/>
+    <style type="text/css">
+        body, html {
+            height: 100%;
+        }
+
+        body {
+            font-size: 11pt;
+            font-family: sans-serif;
+            line-height: 1.7em;
+            margin: 0px;
+            padding: 10px 20px 0px;
+        }
+        a {
+            color: black;
+        }
+        .toolbar input#fileupload {
+            margin: 2px 0px 0px;
+        }
+    </style>
+    <script src="https://unpkg.com/jquery"></script>
+</head>
+<body>
+<div class="toolbar">
+    <select id="layout-select">
+        <optgroup label="Layouts">
+            <option value="cose-bilkent">cose-bilkent</option>
+            <option value="klay">klay</option>
+            <option value="dagre">dagre</option>
+            <option value="cise">cise</option>
+            <option value="cola" selected>cola</option>
+        </optgroup>
+    </select>
+    <button id="fit-graph">Fit graph</button>
+    |
+    <button id="toggle-tlp-as-tags">TLP as nodes / tags</button>
+    <span style="float:right">
+        <span style="margin: 5px 5px">
+            <a href="?bundle=https://gist.githubusercontent.com/traut/05d70be673133b0b4c938057fb38da04/raw/821424986917ab3e3ddb0a78ef3dfc9ad9f1b9bb/stix21-sample-bundle.json">load an example</a> |
+        </span>
+        <input type="file" id="fileupload" style="float:right"/>
+    </span>
+</div>
+
+<div id="graph" 
+     data-stix-allow-dragdrop=true
+     data-show-sidebar=true
+     data-graph-layout=cola
+     data-graph-width='100%'
+     data-graph-height='85vh'>
+</div>
+
+<script>
+    window.addEventListener("load", function(){
+
+        window.stixview.onLoad("#graph", function(graph){
+            console.info("Data loaded");
+        });
+
+        window.stixview.onInit("#graph", function(graph){
+            console.info("Initiated");
+
+            const url = new URL(window.location.href);
+            const remoteBundleUrl = url.searchParams.get('bundle');
+            if (remoteBundleUrl) {
+                graph.loadDataFromParamUrl('bundle');
+            }
+
+            $("#fileupload").on('change', function(e) {
+                var files = e.target.files; // FileList object
+                if (files.length > 1) {
+                    console.error("More than 1 file dropped, picking first one")
+                };
+                if (files.lengh == 0) {
+                    return
+                }
+                var file = files[0];
+                graph.loadDataFromFile(file);
+            });
+
+            $("#layout-select").on('change', function(e) {
+                graph.runLayout(e.target.value);
+                document.getElementById('layout-select').value = e.target.value;
+            });
+
+            let tlpAsTags = true;
+            $("#toggle-tlp-as-tags").on('click', function(e) {
+                e.preventDefault();
+                tlpAsTags = !tlpAsTags;
+                graph.reloadData({showTlpAsTags: tlpAsTags});
+            });
+
+            $("#fit-graph").on('click', () => graph.fit());
+        });
+    });
+
+</script>
+
+</body>
+</html>
+

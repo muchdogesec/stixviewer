@@ -1,0 +1,208 @@
+.stix-viewer-block {
+    display: block;
+    overflow: auto;
+    position: relative;
+    font-size: 0.8em;
+    font-family: sans-serif;
+    margin: 10px 0px;
+}
+
+.stix-viewer-block .stix-viewer {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+
+.stix-viewer-block .viewer-footer {
+    padding: 8px;
+
+    border-radius: 0 0 2px 2px;
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: #ddd;
+
+    background-color: #f7f7f7; 
+    line-height: 1.2em;
+}
+
+.stix-viewer-block .stix-viewer .stix-graph {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+.stix-viewer-block .viewer-header {
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 2px 2px 0 0;
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #f7f7f7; 
+    color: #586069;
+    line-height: 1.2em;
+}
+
+.stix-viewer-block .viewer-header a {
+    color: #586069;
+}
+
+.stix-viewer .viewer-placeholder {
+    top: 45%;
+    position: relative;
+    font-family: sans-serif;
+    font-size: 2em;
+    color: #d6d6d6;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.stix-viewer-block .dragover-active {
+    background-color: #eee;
+}
+
+.stix-viewer-block .loading {
+    background-color: #f7f7f7; 
+}
+
+.stix-viewer-block .sidebar {
+    top: 0px;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    max-width: 400px;
+    position: absolute;
+    padding: 10px;
+    display: none;
+    border-width: 0px 0px 0px 1px;
+    border-style: solid;
+    border-color: #ddd;
+    background-color: #f7f7f7;
+    overflow: scroll;
+    z-index: 9999;
+}
+
+.stix-viewer-block .sidebar p {
+    line-height: 1.4em;
+}
+
+.stix-viewer-block .sidebar .sidebar-title {
+    word-wrap: break-word;
+    font-weight: normal;
+    font-size: 20pt;
+}
+
+.stix-viewer-block .sidebar .sidebar-close-icon {
+    float: right;
+    font-size: 20pt;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.stix-viewer-block .sidebar img.sidebar-type-icon {
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.stix-viewer-block .sidebar .sidebar-textarea {
+    height: 400px;
+    width: 100%;
+}
+
+.stix-viewer-block .viewer-footer {
+    color: #586069;
+    background-color: #f7f7f7;
+}
+
+.stix-viewer-block .viewer-footer a {
+    color: #586069;
+}
+
+.marking-tag {
+
+    /* https://floating-ui.com/docs/migration#positioning-function-change */
+    width: max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-size: 0.8em;
+    font-family: sans-serif;
+    padding: 0px 2px;
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+/* tlp v1 */
+
+.marking-tag-tlp-white {
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+.marking-tag-tlp-green {
+    color: white;
+    background-color: green;
+    border-color: green;
+}
+
+.marking-tag-tlp-amber {
+    color: white;
+    background-color: orange;
+    border-color: orange;
+}
+
+.marking-tag-tlp-red {
+    color: white;
+    background-color: red;
+    border-color: red;
+}
+
+/* tlp v2 */
+
+.marking-tag-tlpv2-clear {
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+.marking-tag-tlpv2-green {
+    color: white;
+    background-color: green;
+    border-color: green;
+}
+
+.marking-tag-tlpv2-amber {
+    color: white;
+    background-color: orange;
+    border-color: orange;
+}
+
+.marking-tag-tlpv2-amber-strict {
+    color: white;
+    background-color: orange;
+    border-color: orange;
+}
+
+.marking-tag-tlpv2-red {
+    color: white;
+    background-color: red;
+    border-color: red;
+}
+
+/* tlp unknown */
+
+.marking-tag-tlp-custom {
+    color: black;
+    background-color: white;
+    border-color: black;
+}

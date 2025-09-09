@@ -1,0 +1,61 @@
+{
+  "name": "stixview",
+  "version": "2.3.0",
+  "description": "Embeddable STIX2 graph viewer in JS",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/traut/stixview.git"
+  },
+  "author": "Sergey Polzunov <sergey@polzunov.com>",
+  "license": "BSD-3-Clause",
+  "private": false,
+  "keywords": [
+    "cti",
+    "stix",
+    "stix2",
+    "intelligence",
+    "security"
+  ],
+  "scripts": {
+    "build": "npx webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint src",
+    "prepare": "yarn lint",
+    "prepublish": "yarn build"
+  },
+  "bugs": {
+    "url": "https://github.com/traut/stixview/issues"
+  },
+  "homepage": "https://github.com/traut/stixview",
+  "unpkg": "dist/stixview.bundle.js",
+  "dependencies": {
+    "@floating-ui/dom": "^1.6.7",
+    "cytoscape": "^3.30.0",
+    "cytoscape-autopan-on-drag": "^2.2.0",
+    "cytoscape-cise": "^2.0.0",
+    "cytoscape-cola": "^2.5.0",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "cytoscape-dagre": "^2.5.0",
+    "cytoscape-euler": "^1.2.2",
+    "cytoscape-klay": "^3.1.4",
+    "cytoscape-popper": "^4.0.0",
+    "eslint-utils": "^3.0.0",
+    "serialize-javascript": "^6.0.2",
+    "svg-inline-loader": "^0.8.2",
+    "underscore": "^1.13.6",
+    "yarn": "^1.22.22"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.8",
+    "@babel/eslint-parser": "^7.24.8",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.7.0",
+    "eslint-config-google": "^0.14.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
