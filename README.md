@@ -2,12 +2,9 @@
 
 [![npm version](https://badge.fury.io/js/stixview.svg)](https://badge.fury.io/js/stixview)
 
-[Stixview](https://github.com/traut/stixview) is a JS library for embeddable interactive STIX2 graphs.
+[Stixview](https://github.com/muchdogesec/stixviewer) is a JS library for embeddable interactive STIX2 graphs.
 
-> [!NOTE]  
-> Hosted version of Stixview is available at [CTIChef.com](https://ctichef.com)
-
-![Stixview graph](https://raw.githubusercontent.com/traut/stixview/master/.github/stixview-graph.png)
+![Stixview graph](https://raw.githubusercontent.com/muchdogesec/stixviewer/master/.github/stixview-graph.png)
 
 ## Motivation
 
@@ -15,7 +12,7 @@ CTI (Cyber Threat Intelligence) is very much about telling stories. Information 
 
 If intelligence provider cares about structured machine-readable CTI, the reports produced will be supplemented with [STIX2](https://oasis-open.github.io/cti-documentation/) bundles. There is a gap there between a story, narrated in a report, and a structured CTI snapshot, represented by a STIX2 bundle.
 
-The objective of [Stixview](https://github.com/traut/stixview) library is to provide easily embeddable STIX2 graphs with necessary level of interactivity, so that CTI community can create informative and engaging stories.
+The objective of [Stixview](https://github.com/muchdogesec/stixviewer) library is to provide easily embeddable STIX2 graphs with necessary level of interactivity, so that CTI community can create informative and engaging stories.
 
 ## Demos
 
@@ -41,6 +38,14 @@ or use [unpkg](https://unpkg.com) CDN service:
 
 ```html
 <script src="https://unpkg.com/stixview/dist/stixview.bundle.js" type="text/javascript"></script>
+```
+
+### Developers
+
+To rebuild the bundle to reflect any changes
+
+```shell
+yarn build
 ```
 
 ## API
@@ -112,9 +117,3 @@ Graph is an object with properties:
 * `loadDataFromFile(file)` — load STIX2 bundle from `file` file object and render on a graph.
 * `loadDataFromUrl(url)` — load STIX2 bundle from remote URL and render on a graph.
 * `loadDataFromParamUrl(paramName)` — load STIX2 bundle from remote URL, configured in HTTP GET paramter with name in `paramName` and render on a graph.
-
-## Build
-
-```shell
-yarn build
-```
