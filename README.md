@@ -1,6 +1,6 @@
-# STIX Viewer
+[![npm version](https://badge.fury.io/js/stixviewer.svg)](https://badge.fury.io/js/stixviewer)
 
-[![npm version](https://badge.fury.io/js/stixview.svg)](https://badge.fury.io/js/stixview)
+# STIX Viewer
 
 [STIX Viewer](https://github.com/muchdogesec/stixviewer) is a JS library for embeddable interactive STIX2 graphs.
 
@@ -38,15 +38,15 @@ To use STIX Viewer in a browser, download the latest build from `dist` directory
 <script src="stixview.bundle.js" type="text/javascript"></script>
 ```
 
-or use [unpkg](https://unpkg.com) CDN service:
+or [install via npm](https://www.npmjs.com/package/stixviewer):
 
-```html
-<script src="https://unpkg.com/stixview/dist/stixview.bundle.js" type="text/javascript"></script>
+```shell
+npm i stixviewer
 ```
 
 ### Developers
 
-To rebuild to reflect any changes:
+To rebuild to reflect any changes you have made to the code:
 
 ```shell
 yarn build
