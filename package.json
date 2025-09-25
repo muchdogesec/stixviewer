@@ -1,13 +1,16 @@
 {
-  "name": "stixview",
+  "name": "stixviewer",
   "version": "2.5.0",
   "description": "Embeddable STIX2 graph viewer in JS",
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/traut/stixview.git"
+    "url": "git+ssh://git@github.com/muchdogesec/stixviewer.git"
   },
   "author": "Sergey Polzunov <sergey@polzunov.com>",
+  "contributors": [
+    "dogesec (https://www.dogesec.com)"
+  ],
   "license": "BSD-3-Clause",
   "private": false,
   "keywords": [
@@ -21,11 +24,11 @@
     "build": "npx webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint src",
-    "prepare": "yarn lint",
-    "prepublish": "yarn build"
+    "prepare": "npm install -D webpack-cli && npm run build",
+    "prepublishOnly": "npm run build"
   },
   "bugs": {
-    "url": "https://github.com/traut/stixview/issues"
+    "url": "https://github.com/muchdogesec/stixviewer/issues"
   },
   "homepage": "https://github.com/traut/stixview",
   "unpkg": "dist/stixview.bundle.js",
@@ -44,6 +47,7 @@
     "serialize-javascript": "^6.0.2",
     "svg-inline-loader": "^0.8.2",
     "underscore": "^1.13.6",
+    "webpack": "^5.95.0",
     "yarn": "^1.22.22"
   },
   "devDependencies": {

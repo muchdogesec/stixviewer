@@ -1,13 +1,14 @@
-# Stixview
+# STIX Viewer
 
 [![npm version](https://badge.fury.io/js/stixview.svg)](https://badge.fury.io/js/stixview)
 
-[Stixview](https://github.com/traut/stixview) is a JS library for embeddable interactive STIX2 graphs.
+[STIX Viewer](https://github.com/muchdogesec/stixviewer) is a JS library for embeddable interactive STIX2 graphs.
 
-> [!NOTE]  
-> Hosted version of Stixview is available at [CTIChef.com](https://ctichef.com)
+![STIX Viewer graph](/.github/stixview-graph.png)
 
-![Stixview graph](https://raw.githubusercontent.com/traut/stixview/master/.github/stixview-graph.png)
+## Credits
+
+This is a hard fork of [stixview](https://github.com/traut/stixview) create by Sergey Polzunov.
 
 ## Motivation
 
@@ -15,23 +16,23 @@ CTI (Cyber Threat Intelligence) is very much about telling stories. Information 
 
 If intelligence provider cares about structured machine-readable CTI, the reports produced will be supplemented with [STIX2](https://oasis-open.github.io/cti-documentation/) bundles. There is a gap there between a story, narrated in a report, and a structured CTI snapshot, represented by a STIX2 bundle.
 
-The objective of [Stixview](https://github.com/traut/stixview) library is to provide easily embeddable STIX2 graphs with necessary level of interactivity, so that CTI community can create informative and engaging stories.
+The objective of STIX Viewer library is to provide easily embeddable STIX2 graphs with necessary level of interactivity, so that CTI community can create informative and engaging stories.
 
 ## Demos
 
-To see Stixview in action, take a look at these demo pages:
+To see STIX Viewer in action, take a look at these demo pages:
 
-* [STIX2.1 demo](https://traut.github.io/stixview/dist/demos/stix21-demo.html) — sample graph with all STIX 2.1 objects.
-* [Storyline](https://traut.github.io/stixview/dist/demos/story.html) — multiple graphs per page, rendering selected entities from the same STIX bundle.
-* [Viewer](https://traut.github.io/stixview/dist/demos/viewer.html) — graph viewer with custom controls.
-* [Drag-n-drop](https://traut.github.io/stixview/dist/demos/drag-n-drop.html) — graph views with drag-n-drop enabled.
-* [Dark theme graph from inline data](https://traut.github.io/stixview/dist/demos/load-data.html) — rendering graph from inline STIX2 bundle and custom styling.
-* [TLP tags and custom sidebar content renderer](https://traut.github.io/stixview/dist/demos/tags-and-custom-sidebar.html) — TLP marking definitions shown as tags and sidebar is rendered with provided function.
-* [Examples of various configuration settings](https://traut.github.io/stixview/dist/demos/misc.html)
+* [STIX2.1 demo](/dist/demos/stix21-demo.html) — sample graph with all STIX 2.1 objects.
+* [Storyline](/dist/demos/story.html) — multiple graphs per page, rendering selected entities from the same STIX bundle.
+* [Viewer](/dist/demos/viewer.html) — graph viewer with custom controls.
+* [Drag-n-drop](/dist/demos/drag-n-drop.html) — graph views with drag-n-drop enabled.
+* [Dark theme graph from inline data](/dist/demos/load-data.html) — rendering graph from inline STIX2 bundle and custom styling.
+* [TLP tags and custom sidebar content renderer](/dist/demos/tags-and-custom-sidebar.html) — TLP marking definitions shown as tags and sidebar is rendered with provided function.
+* [Examples of various configuration settings](/dist/demos/misc.html)
 
 ## Usage
 
-To use Stixview in a browser, download the latest build from `dist` directory (`stixview.bundle.js`) and reference it from your HTML file:
+To use STIX Viewer in a browser, download the latest build from `dist` directory (`stixview.bundle.js`) and reference it from your HTML file:
 
 ```html
 <script src="stixview.bundle.js" type="text/javascript"></script>
@@ -43,10 +44,18 @@ or use [unpkg](https://unpkg.com) CDN service:
 <script src="https://unpkg.com/stixview/dist/stixview.bundle.js" type="text/javascript"></script>
 ```
 
+### Developers
+
+To rebuild to reflect any changes:
+
+```shell
+yarn build
+```
+
 ## API
 
 The library relies heavily on [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes).
-On page load, Stixview will find all HTML elements with `data-stix-gist-id`, `data-stix-url` or `data-stix-allow-dragdrop` set and use these elements as graph holders.
+On page load, STIX Viewer will find all HTML elements with `data-stix-gist-id`, `data-stix-url` or `data-stix-allow-dragdrop` set and use these elements as graph holders.
 
 Example of a graph holder div:
 
@@ -63,7 +72,7 @@ Example of a graph holder div:
 
 Every holder element _must have_ one of `data-stix-gist-id`, `data-stix-url` or `data-stix-allow-dragdrop` set, otherwise it will not be detected by the library.
 
-Stixview supports these `data-` attributes:
+STIX Viewer supports these `data-` attributes:
 
 * `stix-gist-id` — id of a gist that contains STIX2 bundle. if `gist-file` is not specified, first file will be used.
 * `gist-file` — name of a file from gist to be used as STIX2 bundle. Only used if `stix-gist-id` is set.
@@ -91,9 +100,9 @@ Stixview supports these `data-` attributes:
 The library, when used in a browser, will register `stixview` variable on `window` object with these properties:
 
 * `registry` — a registry of graphs initiated on a page.
-* `onInit(selector, callback)` – listener hook for graph's init event on a DOM element that matches provided `selector` value (see [demo](https://traut.github.io/stixview/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
-* `onLoad(selector, callback)` – listener hook for graph's load event on a DOM element that matches provided `selector` value (see [demo](https://traut.github.io/stixview/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
-* `init(element, properties, initCallback, loadCallback)` — method that initiates a graph view in specified `element` with provided `properties` that override defaults (see [demo](https://traut.github.io/stixview/dist/demos/load-data.html) for usage example).
+* `onInit(selector, callback)` – listener hook for graph's init event on a DOM element that matches provided `selector` value (see [demo](/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
+* `onLoad(selector, callback)` – listener hook for graph's load event on a DOM element that matches provided `selector` value (see [demo](/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
+* `init(element, properties, initCallback, loadCallback)` — method that initiates a graph view in specified `element` with provided `properties` that override defaults (see [demo](/dist/demos/load-data.html) for usage example).
 
 ### Graph object
 
@@ -112,9 +121,3 @@ Graph is an object with properties:
 * `loadDataFromFile(file)` — load STIX2 bundle from `file` file object and render on a graph.
 * `loadDataFromUrl(url)` — load STIX2 bundle from remote URL and render on a graph.
 * `loadDataFromParamUrl(paramName)` — load STIX2 bundle from remote URL, configured in HTTP GET paramter with name in `paramName` and render on a graph.
-
-## Build
-
-```shell
-yarn build
-```
