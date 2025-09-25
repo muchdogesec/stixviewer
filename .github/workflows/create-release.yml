@@ -25,31 +25,32 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      # Grab version from package.json (e.g., "2.5.0")
       - id: pkg
         name: Read package version
-        run: echo "version=$(node -p \"require('./package.json').version\")" >> $GITHUB_OUTPUT
+        shell: bash
+        run: |
+          VERSION=$(npm pkg get version | tr -d '"')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
-      # Check if the tag already exists on origin
       - id: check_tag
         name: Check if tag exists
+        shell: bash
         run: |
           if git ls-remote --tags origin "refs/tags/v${{ steps.pkg.outputs.version }}" | grep -q .; then
-            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "exists=true" >> "$GITHUB_OUTPUT"
           else
-            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "exists=false" >> "$GITHUB_OUTPUT"
           fi
 
-      # Create and push the tag if it doesn't exist
       - name: Create and push tag
         if: steps.check_tag.outputs.exists == 'false'
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git tag -a "v${{ steps.pkg.outputs.version }}" -m "Release v${{ steps.pkg.outputs.version }}"
           git push origin "v${{ steps.pkg.outputs.version }}"
 
-      # Create a GitHub Release for the tag (autogenerates notes)
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
