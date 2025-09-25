@@ -24,8 +24,8 @@
     "build": "npx webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint src",
-    "prepare": "yarn lint",
-    "prepublish": "yarn build"
+    "prepare": "npm install -D webpack-cli && npm run build",
+    "prepublishOnly": "npm run build"
   },
   "bugs": {
     "url": "https://github.com/muchdogesec/stixviewer/issues"
@@ -47,6 +47,7 @@
     "serialize-javascript": "^6.0.2",
     "svg-inline-loader": "^0.8.2",
     "underscore": "^1.13.6",
+    "webpack": "^5.95.0",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
