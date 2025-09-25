@@ -1,4 +1,5 @@
 name: Build and test the package
+
 on:
   push:
     branches:
