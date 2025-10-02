@@ -302,7 +302,7 @@ function initWrapper(element, options) {
         const viewerFooter = document.createElement('div');
         viewerFooter.setAttribute('class', 'viewer-footer');
         viewerFooter.innerHTML = `
-            made with <a href="https://traut.github.io/stixview/">Stixview</a>
+            made with <a target="_blank" href="https://github.com/muchdogesec/stixviewer">STIX Viewer</a> by <a target="_blank" href="https://www.dogesec.com">dogesec</a>
             <span style="float:right">
                 <a href="#" class="download-json">STIX2</a>&nbsp;
                 <a href="#" class="download-png">PNG</a>
