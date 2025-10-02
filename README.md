@@ -32,10 +32,10 @@ To see STIX Viewer in action, take a look at these demo pages:
 
 ## Usage
 
-To use STIX Viewer in a browser, download the latest build from `dist` directory (`stixview.bundle.js`) and reference it from your HTML file:
+To use STIX Viewer in a browser, download the latest build from `dist` directory (`stixviewer.bundle.js`) and reference it from your HTML file:
 
 ```html
-<script src="stixview.bundle.js" type="text/javascript"></script>
+<script src="stixviewer.bundle.js" type="text/javascript"></script>
 ```
 
 or [install via npm](https://www.npmjs.com/package/stixviewer):
