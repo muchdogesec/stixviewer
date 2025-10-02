@@ -46,7 +46,7 @@ npm i stixviewer
 
 ### Developers
 
-To rebuild to reflect any changes you have made to the code:
+To rebuild to reflect any changes you have made to the code (inc. the demos):
 
 ```shell
 yarn build
@@ -100,9 +100,9 @@ STIX Viewer supports these `data-` attributes:
 The library, when used in a browser, will register `stixview` variable on `window` object with these properties:
 
 * `registry` — a registry of graphs initiated on a page.
-* `onInit(selector, callback)` – listener hook for graph's init event on a DOM element that matches provided `selector` value (see [demo](/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
-* `onLoad(selector, callback)` – listener hook for graph's load event on a DOM element that matches provided `selector` value (see [demo](/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
-* `init(element, properties, initCallback, loadCallback)` — method that initiates a graph view in specified `element` with provided `properties` that override defaults (see [demo](/dist/demos/load-data.html) for usage example).
+* `onInit(selector, callback)` – listener hook for graph's init event on a DOM element that matches provided `selector` value (see [demo](https://muchdogesec.github.io/stixviewer/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
+* `onLoad(selector, callback)` – listener hook for graph's load event on a DOM element that matches provided `selector` value (see [demo](https://muchdogesec.github.io/stixviewer/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
+* `init(element, properties, initCallback, loadCallback)` — method that initiates a graph view in specified `element` with provided `properties` that override defaults (see [demo](https://muchdogesec.github.io/stixviewer/dist/demos/load-data.html) for usage example).
 
 ### Graph object
 
