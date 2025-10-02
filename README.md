@@ -22,13 +22,13 @@ The objective of STIX Viewer library is to provide easily embeddable STIX2 graph
 
 To see STIX Viewer in action, take a look at these demo pages:
 
-* [STIX2.1 demo](/dist/demos/stix21-demo.html) — sample graph with all STIX 2.1 objects.
-* [Storyline](/dist/demos/story.html) — multiple graphs per page, rendering selected entities from the same STIX bundle.
-* [Viewer](/dist/demos/viewer.html) — graph viewer with custom controls.
-* [Drag-n-drop](/dist/demos/drag-n-drop.html) — graph views with drag-n-drop enabled.
-* [Dark theme graph from inline data](/dist/demos/load-data.html) — rendering graph from inline STIX2 bundle and custom styling.
-* [TLP tags and custom sidebar content renderer](/dist/demos/tags-and-custom-sidebar.html) — TLP marking definitions shown as tags and sidebar is rendered with provided function.
-* [Examples of various configuration settings](/dist/demos/misc.html)
+* [STIX2.1 demo](https://muchdogesec.github.io/stixviewer/dist/demos/stix21-demo.html) — sample graph with all STIX 2.1 objects.
+* [Storyline](https://muchdogesec.github.io/stixviewer/dist/demos/story.html) — multiple graphs per page, rendering selected entities from the same STIX bundle.
+* [Viewer](https://muchdogesec.github.io/stixviewer/dist/demos/viewer.html) — graph viewer with custom controls.
+* [Drag-n-drop](https://muchdogesec.github.io/stixviewer/dist/demos/drag-n-drop.html) — graph views with drag-n-drop enabled.
+* [Dark theme graph from inline data](https://muchdogesec.github.io/stixviewer/dist/demos/load-data.html) — rendering graph from inline STIX2 bundle and custom styling.
+* [TLP tags and custom sidebar content renderer](https://muchdogesec.github.io/stixviewer/dist/demos/tags-and-custom-sidebar.html) — TLP marking definitions shown as tags and sidebar is rendered with provided function.
+* [Examples of various configuration settings](https://muchdogesec.github.io/stixviewer/dist/demos/misc.html)
 
 ## Usage
 
@@ -38,7 +38,7 @@ To use STIX Viewer in a browser, download the latest build from `dist` directory
 <script src="stixviewer.bundle.js" type="text/javascript"></script>
 ```
 
-or [install via npm](https://www.npmjs.com/package/stixviewer):
+Or to use STIX Viewer in your web apps, [install via npm](https://www.npmjs.com/package/stixviewer):
 
 ```shell
 npm i stixviewer
