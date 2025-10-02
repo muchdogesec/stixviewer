@@ -4,7 +4,7 @@
 
 [STIX Viewer](https://github.com/muchdogesec/stixviewer) is a JS library for embeddable interactive STIX2 graphs.
 
-![STIX Viewer graph](/.github/stixview-graph.png)
+![STIX Viewer graph](.github/stixviewer-graph.png)
 
 ## Credits
 
@@ -22,13 +22,13 @@ The objective of STIX Viewer library is to provide easily embeddable STIX2 graph
 
 To see STIX Viewer in action, take a look at these demo pages:
 
-* [STIX2.1 demo](https://muchdogesec.github.io/stixviewer/dist/demos/stix21-demo.html) — sample graph with all STIX 2.1 objects.
-* [Storyline](https://muchdogesec.github.io/stixviewer/dist/demos/story.html) — multiple graphs per page, rendering selected entities from the same STIX bundle.
-* [Viewer](https://muchdogesec.github.io/stixviewer/dist/demos/viewer.html) — graph viewer with custom controls.
-* [Drag-n-drop](https://muchdogesec.github.io/stixviewer/dist/demos/drag-n-drop.html) — graph views with drag-n-drop enabled.
-* [Dark theme graph from inline data](https://muchdogesec.github.io/stixviewer/dist/demos/load-data.html) — rendering graph from inline STIX2 bundle and custom styling.
-* [TLP tags and custom sidebar content renderer](https://muchdogesec.github.io/stixviewer/dist/demos/tags-and-custom-sidebar.html) — TLP marking definitions shown as tags and sidebar is rendered with provided function.
-* [Examples of various configuration settings](https://muchdogesec.github.io/stixviewer/dist/demos/misc.html)
+* [STIX2.1 demo](https://stixviewer.dogesec.com/dist/demos/stix21-demo.html) — sample graph with all STIX 2.1 objects.
+* [Storyline](https://stixviewer.dogesec.com/dist/demos/story.html) — multiple graphs per page, rendering selected entities from the same STIX bundle.
+* [Viewer](https://stixviewer.dogesec.com/dist/demos/viewer.html) — graph viewer with custom controls.
+* [Drag-n-drop](https://stixviewer.dogesec.com/dist/demos/drag-n-drop.html) — graph views with drag-n-drop enabled.
+* [Dark theme graph from inline data](https://stixviewer.dogesec.com/dist/demos/load-data.html) — rendering graph from inline STIX2 bundle and custom styling.
+* [TLP tags and custom sidebar content renderer](https://stixviewer.dogesec.com/dist/demos/tags-and-custom-sidebar.html) — TLP marking definitions shown as tags and sidebar is rendered with provided function.
+* [Examples of various configuration settings](https://stixviewer.dogesec.com/dist/demos/misc.html)
 
 ## Usage
 
@@ -100,9 +100,9 @@ STIX Viewer supports these `data-` attributes:
 The library, when used in a browser, will register `stixview` variable on `window` object with these properties:
 
 * `registry` — a registry of graphs initiated on a page.
-* `onInit(selector, callback)` – listener hook for graph's init event on a DOM element that matches provided `selector` value (see [demo](https://muchdogesec.github.io/stixviewer/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
-* `onLoad(selector, callback)` – listener hook for graph's load event on a DOM element that matches provided `selector` value (see [demo](https://muchdogesec.github.io/stixviewer/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
-* `init(element, properties, initCallback, loadCallback)` — method that initiates a graph view in specified `element` with provided `properties` that override defaults (see [demo](https://muchdogesec.github.io/stixviewer/dist/demos/load-data.html) for usage example).
+* `onInit(selector, callback)` – listener hook for graph's init event on a DOM element that matches provided `selector` value (see [demo](https://stixviewer.dogesec.com/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
+* `onLoad(selector, callback)` – listener hook for graph's load event on a DOM element that matches provided `selector` value (see [demo](https://stixviewer.dogesec.com/dist/demos/viewer.html) for usage example). Callback receive instance of a graph interface.
+* `init(element, properties, initCallback, loadCallback)` — method that initiates a graph view in specified `element` with provided `properties` that override defaults (see [demo](https://stixviewer.dogesec.com/dist/demos/load-data.html) for usage example).
 
 ### Graph object
 
