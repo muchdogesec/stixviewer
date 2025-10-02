@@ -1,6 +1,6 @@
 {
   "name": "stixviewer",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "description": "Embeddable STIX2 graph viewer in JS",
   "main": "src/index.js",
   "repository": {
@@ -31,7 +31,7 @@
     "url": "https://github.com/muchdogesec/stixviewer/issues"
   },
   "homepage": "https://github.com/muchdogesec/stixviewer",
-  "unpkg": "dist/stixview.bundle.js",
+  "unpkg": "dist/stixviewer.bundle.js",
   "dependencies": {
     "@floating-ui/dom": "^1.6.7",
     "cytoscape": "^3.30.0",

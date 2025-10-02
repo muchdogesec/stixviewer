@@ -21,7 +21,7 @@ module.exports = {
     // mode: 'development',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'stixview.bundle.js',
+        filename: 'stixviewer.bundle.js',
     },
     module: {
         rules: [
