@@ -55,6 +55,10 @@ const xMitreDataSourceIcon = require(
     '!svg-inline-loader?removeSVGTagAttrs=false!../icons/x-mitre-data-source.svg');
 const xMitreDataComponentIcon = require(
     '!svg-inline-loader?removeSVGTagAttrs=false!../icons/x-mitre-data-component.svg');
+const xMitreCollectionIcon = require(
+    '!svg-inline-loader?removeSVGTagAttrs=false!../icons/x-mitre-collection.svg');
+const xMitreMatrixIcon = require(
+    '!svg-inline-loader?removeSVGTagAttrs=false!../icons/x-mitre-matrix.svg');
 
 // SDO: Attack Flow
 const attackFlowComponentIcon = require(
@@ -262,6 +266,16 @@ const iconPerType = {
         color: '#3f51b5',
         shape: 'ellipse',
         image: encodeSvg(xMitreDataComponentIcon),
+    },
+    'x-mitre-collection': {
+        color: '#9C27B0',
+        shape: 'ellipse',
+        image: encodeSvg(xMitreCollectionIcon),
+    },
+    'x-mitre-matrix': {
+        color: '#ffc107',
+        shape: 'ellipse',
+        image: encodeSvg(xMitreMatrixIcon),
     },
     // SDO: Attack Flow
     'attack-flow': {
