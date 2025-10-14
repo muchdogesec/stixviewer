@@ -1,6 +1,6 @@
 {
   "name": "stixviewer",
-  "version": "2.5.8",
+  "version": "2.5.9",
   "description": "Embeddable STIX2 graph viewer in JS",
   "main": "src/index.js",
   "repository": {

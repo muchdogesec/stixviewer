@@ -117,8 +117,8 @@ const x509CertificateIcon = require(
 // SCO: dogesec
 const bankAccountIcon = require(
     '!svg-inline-loader?removeSVGTagAttrs=false!../icons/bank-account.svg');
-const bankCardIcon = require(
-    '!svg-inline-loader?removeSVGTagAttrs=false!../icons/bank-card.svg');
+const paymentCardIcon = require(
+    '!svg-inline-loader?removeSVGTagAttrs=false!../icons/payment-card.svg');
 const cryptocurrencyTransactionIcon = require(
     '!svg-inline-loader?removeSVGTagAttrs=false!../icons/cryptocurrency-transaction.svg');
 const cryptocurrencyWalletIcon = require(
@@ -402,10 +402,10 @@ const iconPerType = {
         shape: 'ellipse',
         image: encodeSvg(bankAccountIcon),
     },
-    'bank-card': {
+    'payment-card': {
         color: '#91b2b5',
         shape: 'ellipse',
-        image: encodeSvg(bankCardIcon),
+        image: encodeSvg(paymentCardIcon),
     },
     'cryptocurrency-transaction': {
         color: '#dee9a7',
