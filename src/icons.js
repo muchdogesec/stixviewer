@@ -304,7 +304,7 @@ const iconPerType = {
     'procedure': {
         color: '#f5a623',
         shape: 'ellipse',
-        image: encodeSvg(exploitIcon),
+        image: encodeSvg(procedureIcon),
     },
     // SRO: Core
     'sighting': {
