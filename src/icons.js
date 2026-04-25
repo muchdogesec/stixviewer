@@ -71,6 +71,8 @@ const weaknessIcon = require(
     '!svg-inline-loader?removeSVGTagAttrs=false!../icons/weakness.svg');
 const exploitIcon = require(
     '!svg-inline-loader?removeSVGTagAttrs=false!../icons/exploit.svg');
+const procedureIcon = require(
+    '!svg-inline-loader?removeSVGTagAttrs=false!../icons/procedure.svg');
 
 // SRO: Core
 const sightingIcon = require(
@@ -296,6 +298,11 @@ const iconPerType = {
     },
     'exploit': {
         color: '#008450',
+        shape: 'ellipse',
+        image: encodeSvg(exploitIcon),
+    },
+    'procedure': {
+        color: '#f5a623',
         shape: 'ellipse',
         image: encodeSvg(exploitIcon),
     },
