@@ -12,6 +12,7 @@ permissions:
 jobs:
   release-npmjs:
     runs-on: ubuntu-latest
+    environment: npm-publish
     steps:
       - uses: actions/checkout@v4
 
@@ -21,6 +22,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - run: yarn install --frozen-lockfile
+
+      - name: Configure npm auth
+        shell: bash
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: npm publish --access public
         env:
