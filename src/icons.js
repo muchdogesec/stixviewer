@@ -131,6 +131,8 @@ const phoneNumberIcon = require(
     '!svg-inline-loader?removeSVGTagAttrs=false!../icons/phone-number.svg');
 const userAgentIcon = require(
     '!svg-inline-loader?removeSVGTagAttrs=false!../icons/user-agent.svg');
+const aiPromptIcon = require(
+    '!svg-inline-loader?removeSVGTagAttrs=false!../icons/ai-prompt.svg');
 
 function encodeSvg(icon) {
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(icon);
@@ -438,6 +440,11 @@ const iconPerType = {
         color: '#98c7ef',
         shape: 'ellipse',
         image: encodeSvg(userAgentIcon),
+    },
+    'ai-prompt': {
+        color: '#b3c0f3',
+        shape: 'ellipse',
+        image: encodeSvg(aiPromptIcon),
     },
     // SMOs
     'extension-definition': {
