@@ -1,6 +1,6 @@
 {
   "name": "stixviewer",
-  "version": "2.6.1",
+  "version": "2.6.2",
   "description": "Embeddable STIX2 graph viewer in JS",
   "main": "src/index.js",
   "repository": {
@@ -44,10 +44,10 @@
     "cytoscape-klay": "^3.1.4",
     "cytoscape-popper": "^4.0.0",
     "eslint-utils": "^3.0.0",
-    "serialize-javascript": "^6.0.2",
+    "serialize-javascript": "^7.0.5",
     "svg-inline-loader": "^0.8.2",
-    "underscore": "^1.13.6",
-    "webpack": "^5.95.0",
+    "underscore": "^1.13.8",
+    "webpack": "^5.105.0",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
@@ -56,10 +56,17 @@
     "css-loader": "^7.1.2",
     "eslint": "^9.7.0",
     "eslint-config-google": "^0.14.0",
-    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.0",
     "style-loader": "^4.0.0",
-    "webpack": "^5.93.0",
+    "webpack": "^5.105.0",
     "webpack-cli": "^6.0.1"
+  },
+  "overrides": {
+    "brace-expansion": "^1.1.13",
+    "flatted": "^3.4.2",
+    "js-yaml": "^4.1.1",
+    "lodash": "^4.17.23",
+    "minimatch": "^3.1.4",
+    "postcss": "^8.5.15"
   }
 }
